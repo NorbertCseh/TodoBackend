@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const port = 3000
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const keys = require('./config/keys')
 
+app.use(cors())
+app.options('*', cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
